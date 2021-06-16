@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Busca</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <form class="formulario container" id="form01">
+        <div>
+            <label for="ans">ANS: </label>
+            <input type="text" name="ans">
+        </div>
+        <div>
+            <label for="cnpj">CNPJ:</label>
+            <input type="text" name="cnpj">
+        </div>
+        <div>
+            <label for="RazaoSocial">Razão Social:</label>
+            <input type="text" name="razaoSocial">
+        </div>
+        <div>
+            <label for="Nome">Nome:</label>
+            <input type="text" name="nome">
+        </div>
+        <div>
+            <label for="Email">E-mail:</label>
+            <input type="text" name="email">
+        </div>
+        <div>
+            <label for="Representante">Representante:</label>
+            <input type="text" name="representante">
+        </div>
+        <div>
+            <label for="Modalidade">Modalidade:</label>
+            <input type="text" name="modalidade">
+        </div>
+        <div>
+            <label for="DataRegistro">Data Registro:</label>
+            <input type="text" name="dataRegistro">
+        </div>
+        <br>
+        <button type="submit" onclick="getRegistros(event)">ENVIAR</button>
+    </form>
+    
+    <section class="container" id="registrosFiltrados"  style="display: none;">
+        <button class="btn-return" onclick="newFind()">FAZER NOVA BUSCA</button>
+        
+        <div style="border: dashed #3a3a3a;" v-for="registro in registros">
+            <span class="registros-title">ANS: </span> {{registro["Registro ANS"]}}</br>
+            <span class="registros-title">CNPJ: </span> {{registro["CNPJ"]}}</br>
+            <span class="registros-title">Razão Social </span> {{registro["Razão Social"]}}</br>
+            <span class="registros-title">Nome Fantasia </span> {{registro["Nome Fantasia"]}}</br>
+            <span class="registros-title">Modalidade: </span> {{registro["Modalidade"]}}</br>
+            <span class="registros-title">Logradouro: </span> {{registro["Logradouro"]}}</br>
+            <span class="registros-title">Número: </span> {{registro["Número"]}}</br>
+            <span class="registros-title">Complemento: </span> {{registro["Complemento"]}}</br>
+            <span class="registros-title">Bairro: </span> {{registro["Bairro"]}}</br>
+            <span class="registros-title">Cidade: </span> {{registro["Cidade"]}}</br>
+            <span class="registros-title">UF: </span> {{registro["UF"]}}</br>
+            <span class="registros-title">CEP: </span> {{registro["CEP"]}}</br>
+            <span class="registros-title">CONTATO: </span> ({{registro["DDD"]}}) {{registro["Telefone"]}}</br>
+            <span class="registros-title">FAX: </span> {{registro["Fax"]}}</br>
+            <span class="registros-title">EMAIL: </span> {{registro["Endereço eletrônico"]}}</br>
+            <span class="registros-title">Representante: </span> {{registro["Representante"]}}</br>
+            <span class="registros-title">Cargo Representante </span> {{registro["Cargo Representante"]}}</br>
+            <span class="registros-title">Data Registro </span> {{registro["Data Registro ANS"]}}</br>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script src="./scripts/script.js"></script>
+</body>
+</html>
