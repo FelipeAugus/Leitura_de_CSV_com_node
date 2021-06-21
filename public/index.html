@@ -23,7 +23,7 @@
             <input type="text" name="razaoSocial">
         </div>
         <div>
-            <label for="Nome">Nome:</label>
+            <label for="Nome">Nome fantasia:</label>
             <input type="text" name="nome">
         </div>
         <div>
@@ -43,11 +43,11 @@
             <input type="text" name="dataRegistro">
         </div>
         <br>
-        <button type="submit" onclick="getRegistros(event)">ENVIAR</button>
+        <button type="submit" class="btn" onclick="getRegistros(event)">PESQUISAR</button>
     </form>
     
     <section class="container" id="registrosFiltrados"  style="display: none;">
-        <button class="btn-return" onclick="newFind()">FAZER NOVA BUSCA</button>
+        <button class="btn" onclick="newFind()">FAZER NOVA PESQUISA</button>
         
         <div style="border: dashed #3a3a3a;" v-for="registro in registros">
             <span class="registros-title">ANS: </span> {{registro["Registro ANS"]}}</br>
@@ -70,6 +70,7 @@
             <span class="registros-title">Data Registro </span> {{registro["Data Registro ANS"]}}</br>
         </div>
     </section>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
     <script src="./scripts/script.js"></script>
 </body>

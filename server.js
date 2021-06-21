@@ -43,14 +43,14 @@ app.get('/find/:ans/:cnpj/:razaoSocial/:nome/:modalidade/:email/:representante/:
   const RegistrosFiltrados = [];
   for (const registro in MAP){
     if(
-      ((MAP[registro]['Registro ANS']).indexOf(ans)>-1) &&
-      ((MAP[registro]['CNPJ']).indexOf(cnpj)>-1) &&
-      ((MAP[registro]['Razão Social']).indexOf(razaoSocial)>-1) &&
-      ((MAP[registro]['Nome Fantasia']).indexOf(nome)>-1) &&
-      ((MAP[registro]['Modalidade']).indexOf(modalidade)>-1) &&
-      ((MAP[registro]['Endereço eletrônico']).indexOf(email)>-1) &&
-      ((MAP[registro]['Cargo Representante']).indexOf(representante)>-1) &&
-      ((MAP[registro]['Data Registro ANS']).indexOf(dataRegistro)>-1)
+      ((MAP[registro]['Registro ANS']).toUpperCase()).indexOf(ans)>-1 &&
+      ((MAP[registro]['CNPJ']).toUpperCase()).indexOf(cnpj)>-1 &&
+      ((MAP[registro]['Razão Social']).toUpperCase()).indexOf(razaoSocial)>-1 &&
+      ((MAP[registro]['Nome Fantasia']).toUpperCase()).indexOf(nome)>-1 &&
+      ((MAP[registro]['Modalidade']).toUpperCase()).indexOf(modalidade)>-1 &&
+      ((MAP[registro]['Endereço eletrônico']).toUpperCase()).indexOf(email)>-1 &&
+      ((MAP[registro]['Cargo Representante']).toUpperCase()).indexOf(representante)>-1 &&
+      ((MAP[registro]['Data Registro ANS']).toUpperCase()).indexOf(dataRegistro)>-1
     ){
       RegistrosFiltrados.push(MAP[registro]);
     }
